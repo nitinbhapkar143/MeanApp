@@ -1,0 +1,21 @@
+<div class="page-header">
+	<h1>Registration Page</h1>
+</div>
+
+<form ng-submit="register.createUser(register.regData);">
+	<!-- Email -->
+	<label>Email : </label>
+	<input class="form-control" type="text" name="email" placeholder="Enter email id" ng-model="register.regData.email"><br>
+	<!-- User Name -->
+	<label>User Name : </label>
+	<input class="form-control" type="text" name="usename" placeholder="Enter Usename" ng-model="register.regData.username"><br>
+	<!-- Password -->
+	<label>Password : </label>
+	<input class="form-control" type="password" name="password" placeholder="Enter password" ng-model="register.regData.password"><br>
+
+	<button class="btn btn-primary" type="submit">Submit</button> <span class="glyphicon glyphicon-repeat" ng-show="register.loading">Loading...</span>
+</form>
+<br>
+<div class="alert alert-success" ng-show="register.successMsg">{{register.successMsg}}</div>
+
+<div class="alert alert-danger" ng-show="register.errorMsg">{{register.errorMsg}}</div>

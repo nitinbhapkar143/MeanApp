@@ -7,16 +7,16 @@ module.exports = function(router) {
 	newUser.email = req.body.email;
 	newUser.password = req.body.password;{}
 	if(req.body.username == "" || req.body.username == null ||req.body.password == "" || req.body.password == null ||req.body.email == "" || req.body.email == null){
-		res.send("Username or password field is empty");
+		res.json({sucess : false, message : 'Username or password field is empty'});
 	}
 	else{
 		newUser.save(function(err, userCreated){
 
 			if(err) {
-				res.send('Username or email already exists');
+				res.json({success : false, message : 'Username or email already exists'});
 			}
 			else{
-				res.send('User created');
+				res.json({success: true, message: 'User created'});
 			}
 		});
 	}
