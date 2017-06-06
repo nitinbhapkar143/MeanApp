@@ -1,0 +1,18 @@
+<div class="page-header">
+	<h1>Login Page</h1>
+</div>
+
+<form ng-submit="login.authenticateUser(login.loginData);">
+	<!-- User Name -->
+	<label>User Name : </label>
+	<input class="form-control" type="text" name="usename" placeholder="Enter Usename" ng-model="login.loginData.username"><br>
+	<!-- Password -->
+	<label>Password : </label>
+	<input class="form-control" type="password" name="password" placeholder="Enter password" ng-model="login.loginData.password"><br>
+
+	<button class="btn btn-primary" type="submit">Login</button> <span class="glyphicon glyphicon-repeat" ng-show="login.loading">Loading...</span>
+</form>
+<br>
+<div class="alert alert-success" ng-show="login.successMsg">{{login.successMsg}}</div>
+
+<div class="alert alert-danger" ng-show="login.errorMsg">{{login.errorMsg}}</div>
